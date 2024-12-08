@@ -11,6 +11,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20.x
+      - name: Remove node_modules (if it exists)
+        run: rm -rf node_modules
       - name: Clear npm cache
         run: npm cache clean --force
       - name: Install Dependencies
